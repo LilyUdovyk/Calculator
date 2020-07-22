@@ -4,6 +4,7 @@ export const {
   checkLastAction, checkZeroDigit, isNumber, isDot
 } = Validations;
 
+// Removes the specified quantity of elements from the end
 export const deleteElement = (expression: string, quantity: number) => {
   let output = expression.split('');
 
@@ -14,6 +15,7 @@ export const deleteElement = (expression: string, quantity: number) => {
   return '0';
 };
 
+// Replaces the element expression[quantity] with the value
 export const changeElement = (expression: string, value: string, quantity: number) => {
   let modifiedExpression = expression.split('');
 
@@ -22,6 +24,7 @@ export const changeElement = (expression: string, value: string, quantity: numbe
   return modifiedExpression.join('');
 };
 
+// Replaces the element expression[quantity] with the value from the end
 export const changeLastElement = (expression: string, value: string, quantity: number) => {
   let modifiedExpression = expression.split('');
 
@@ -30,6 +33,7 @@ export const changeLastElement = (expression: string, value: string, quantity: n
   return modifiedExpression.join('');
 };
 
+// Find index of last operator
 export const findIndexLastOperator = (expression: string) => {
   return Math.max(
     expression.lastIndexOf('-'), 
@@ -39,6 +43,7 @@ export const findIndexLastOperator = (expression: string) => {
   )
 };
 
+// Find value of last operand
 export const findLastOperand = (expression: string) => {
   return expression.slice(findIndexLastOperator(expression) + 1)
 }

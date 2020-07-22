@@ -1,16 +1,8 @@
-/* .valueContainer {
-    padding-top: 1.75%;
-} */
-
 .valueContainer {
-    display: block;
-    width: 95%;
-    border: none;
-    height: 30px;
+    height: 3rem;
     text-align: right;
-    padding: 0 10px;
-    margin: 0 auto;
-    font-size: 22px;
-    font-weight: 700;
-    color: lightslategrey;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #808080c4;
 }
