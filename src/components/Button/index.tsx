@@ -17,6 +17,6 @@ const Button = (props: Props) => {
     > 
         {props.value}
     </button>
-  );
-};
+  )
+}
 export default React.memo(Button);

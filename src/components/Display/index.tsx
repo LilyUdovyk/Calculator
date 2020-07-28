@@ -10,6 +10,6 @@ const Display = (props: Props) => {
   
   return (  
     <div className={style.valueContainer}>{props.value}</div>
-  );
-};
+  )
+}
 export default React.memo(Display);
