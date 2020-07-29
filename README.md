@@ -1,4 +1,4 @@
-### Live demo []()
+### Live demo [http://simple-calculator-app.surge.sh/](http://simple-calculator-app.surge.sh/)
 
 ### Practical questions
 
