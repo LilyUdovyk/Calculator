@@ -41,7 +41,7 @@ const Calculator: React.FC = () => {
 
     // Replaces '+' with '-' and '-' with '+'
     const changeOperatorAction = () => {
-        if (checkLastAction(result)) return // if the last entered character is an operator do nothing
+        if (checkLastAction(result)) return // if the last entered character is an operator do any action
         let indexLastOperator = findIndexLastOperator(result)
         let lastOperator = result[indexLastOperator]
         if (lastOperator === '+') { // if the last operator is “+”
@@ -52,13 +52,13 @@ const Calculator: React.FC = () => {
             let expression = result.substring(0, indexLastOperator + 1)
             let lastOperand= findLastOperand(result)
             setResult(expression + '-' + lastOperand);
-        } else { // if any operators were entered add "-" before the operand (3 -> -3)
+        } else { // add "-" before the operand (3 -> -3)
             setResult('-' + result);
         }
     }
 
     const findPercentageAction = () => {
-        if (checkLastAction(result)) return // if the last entered character is an operator do nothing
+        if (checkLastAction(result)) return // if the last entered character is an operator do any action
         setResult(deleteElement(result, 1));
         let absoluteValue= +findLastOperand(result) / 100
         let indexLastOperator = findIndexLastOperator(result)
@@ -76,10 +76,11 @@ const Calculator: React.FC = () => {
 
     const othersActions = (value: string) => {
         if (checkLastAction(value)) { // if the last entered character is an operator
+            // check that the last operand has only one dot
             if (isDot(value)) { // if the last entered character is '.'
-                setCountDot(countDot + 1);
+                setCountDot(countDot + 1); // increase counter
 
-                if (countDot < 1) { // add '.' to the expression
+                if (countDot < 1) { // if the last operand hasn't dot add it to the expression
                     setResult(result + value);
                 }
             } else {
